@@ -1,0 +1,59 @@
+{% extends "base2.html" %}
+{% block title %}Selling Inventory{% endblock %}
+
+{% block content %}
+    <h1 class="display-4" id="title4">Your Products</h1>
+   <div id="retrieve-products">
+    <div>
+        {% if count == 0 %}
+            <p>There are no products.</p>
+        {% elif count == 1 %}
+            <p>There is 1 product.</p>
+        {% else %}
+            <p>There are {{ count }} products.</p>
+        {% endif %}
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Product No</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Brand</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in usersList %}
+                <tr>
+                    <td>{{ user.get_userID() }}</td>
+                    <td>{{ user.get_productName() }}</td>
+                    <td>{{ user.get_category() }}</td>
+                    {% if user.get_brand() == "B" %}
+                        <td>Beats by Dre</td>
+                    {% elif user.get_brand() == "S" %}
+                        <td>Sony</td>
+                    {% elif user.get_brand() == "R" %}
+                        <td>Razer</td>
+                    {% endif %}
+                    <td>{{ user.get_quantity() }}</td>
+                    <td>{{ user.get_price() }}</td>
+                    <td>{{ user.get_description() }}</td>
+                    <td><a href="/updateProduct/{{user.get_userID()}}" class="btn btn-warning">Update</a></td>
+                    <td>
+                          <form action="{{url_for('deleteUser', id=user.get_userID())}}" method="POST">
+                            <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?');">
+                          </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+   </div>
+{% endblock %}

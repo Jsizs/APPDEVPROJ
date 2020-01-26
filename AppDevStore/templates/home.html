@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to E-Store</h1>
+<a href="/text">Come to PAPA!</a>
+<a>
+<div>
+  <div class="ss-show-title">
+    <h2>Featured</h2>
+    <p>Take a look at our latest products</p>
+  </div>
+
+  <div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/400x600/products/435/2755/razer_kraken_forged_edition_gallery_04__23927.1450074155.jpg?c=2" style="width:100%">
+    <div class="text">Razer</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/400x600/products/1030/7528/Elite_Active_65T_C_Blue_1__13596.1545041970.jpg?c=2" style="width:100%">
+    <div class="text">Jabra</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/400x600/products/942/6272/Jabra_Elite_65t_1__92489.1517491785.jpg?c=2" style="width:100%">
+    <div class="text">Jabra</div>
+  </div>
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <script>
+  var slideIndex = 0;
+  showSlides();
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+  </script>
+</div>
+
+<p id="rec">Recommendations</p>
+
+<div>
+  <div class="products-section">
+    <div class="product-content">
+      <div class="product">
+        <span class="title">Vista Wireless Earbuds</span>
+        <a href="A-Games.html" title="Fifa 20"><img class="shop-item-image" src="https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/400x600/products/1404/8994/Vista_Black_5__92922.1569859703.jpg?c=2" alt="Fifa 20" height="200"></a>
+        <div class="product-details">
+          <span class="price">$60.00</span>
+          <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product">
+        <span class="title">Jabra ELite Active</span>
+        <a href="/createUser" title="NBA 2K20"><img class="shop-item-image" src="https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/400x600/products/1030/7528/Elite_Active_65T_C_Blue_1__13596.1545041970.jpg?c=2" alt="NBA 2k20" height="200"></a>
+        <div class="product-details">
+          <span class="price">$79.99</span>
+          <button class="btn btn-primary shop-item-button" type="button" href="retrieveUsers.html">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product">
+        <span class="title">Razer Kraken</span>
+        <a href="A-Games.html" title="GTA V"><img class="shop-item-image" src="https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/400x600/products/435/2755/razer_kraken_forged_edition_gallery_04__23927.1450074155.jpg?c=2" alt="GTA V" height="200"></a>
+        <div class="product-details">
+          <span class="price">$49.99</span>
+          <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product">
+        <span class="title">Razer Kraken</span>
+        <a href="A-Games.html" title="GTA V"><img class="shop-item-image" src="https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/400x600/products/435/2755/razer_kraken_forged_edition_gallery_04__23927.1450074155.jpg?c=2" alt="GTA V" height="200"></a>
+        <div class="product-details">
+          <span class="price">$49.99</span>
+          <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product">
+        <span class="title">Razer Kraken</span>
+        <a href="A-Games.html" title="GTA V"><img class="shop-item-image" src="https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/400x600/products/435/2755/razer_kraken_forged_edition_gallery_04__23927.1450074155.jpg?c=2" alt="GTA V" height="200"></a>
+        <div class="product-details">
+          <span class="price">$49.99</span>
+          <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product">
+        <span class="title">Razer Kraken</span>
+        <a href="A-Games.html" title="GTA V"><img class="shop-item-image" src="https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/400x600/products/435/2755/razer_kraken_forged_edition_gallery_04__23927.1450074155.jpg?c=2" alt="GTA V" height="200"></a>
+        <div class="product-details">
+          <span class="price">$49.99</span>
+          <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p id="rec">Upcoming Promotions</p>
+<div id="link-container">
+<a href="/upcomingPromotions" id="link">More details</a>
+<p></p>
+<img src="https://cdn.discordapp.com/attachments/636147598335410177/666568894399381524/CNYSALES.jpg" alt="sales picture" style="  display: block; margin-left: auto; margin-right: auto; width: 70%; border-radius: 8px;">
+</div>
+
+{% endblock %}

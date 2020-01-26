@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Product_page{% endblock %}
+
+{% block content %}
+
+<style>
+  body{
+  background-color: white;
+  }
+</style>
+<div class="filter-cat">
+<label class="container" id="razer">Razer
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">SONY
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Beats by Dre
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Logitech
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<div>
+
+
+
+  <div id="retrieve-products">
+    <div>
+        {% if count == 0 %}
+            <p>There are no products.</p>
+        {% elif count == 1 %}
+            <p>There is 1 product.</p>
+        {% else %}
+            <p>There are {{ count }} products.</p>
+        {% endif %}
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in usersList %}
+                <tr>
+                    <td>{{ user.get_productName() }}</td>
+                    <td>{{ user.get_quantity() }}</td>
+                    <td>{{ user.get_price() }}</td>
+                    <td>{{ user.get_description() }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+   </div>
+
+
+
+
+
+{% endblock %}
